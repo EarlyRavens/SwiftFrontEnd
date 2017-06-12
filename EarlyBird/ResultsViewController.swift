@@ -43,4 +43,20 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
             return ResultCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let websiteUrl = results[indexPath.row].resultUrl
+        
+        performSegue(withIdentifier: SEGUE_SHOW_WEBSITE, sender: websiteUrl)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SEGUE_SHOW_WEBSITE {
+            if let websiteVC = segue.destination as? WebsiteViewController {
+                if let websiteUrl = sender as? String {
+                    websiteVC.websiteUrl = websiteUrl
+                }
+            }
+        }
+    }
 }

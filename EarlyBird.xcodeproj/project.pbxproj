@@ -20,6 +20,7 @@
 		70EC68F31EEF456F008B56DA /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC68F21EEF456F008B56DA /* MaterialButton.swift */; };
 		70EC68F61EEF45BF008B56DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC68F51EEF45BF008B56DA /* Constants.swift */; };
 		70EC68F81EEF474D008B56DA /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC68F71EEF474D008B56DA /* MaterialView.swift */; };
+		70EC68FA1EEF5CE8008B56DA /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC68F91EEF5CE8008B56DA /* WebsiteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		70EC68F21EEF456F008B56DA /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		70EC68F51EEF45BF008B56DA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		70EC68F71EEF474D008B56DA /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		70EC68F91EEF5CE8008B56DA /* WebsiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
 		C29CD348A489DB68884187C1 /* Pods_EarlyBird.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarlyBird.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			children = (
 				7032EF341EEE6873008B8707 /* SearchViewController.swift */,
 				70BD4C9B1EEF04A500A2AF44 /* ResultsViewController.swift */,
+				70EC68F91EEF5CE8008B56DA /* WebsiteViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EC68FA1EEF5CE8008B56DA /* WebsiteViewController.swift in Sources */,
 				70EC68F11EEF450F008B56DA /* MaterialTextField.swift in Sources */,
 				70EC68F31EEF456F008B56DA /* MaterialButton.swift in Sources */,
 				7032EF351EEE6873008B8707 /* SearchViewController.swift in Sources */,
