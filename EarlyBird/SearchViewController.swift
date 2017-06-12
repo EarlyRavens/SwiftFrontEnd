@@ -33,7 +33,7 @@ class SearchViewController: UIViewController {
     func getResults(business: String, location: String) {
         var nameForInit,urlForInit: String!
         
-        let path = "https://enigmatic-forest-54143.herokuapp.com/?business=\(business)&location=\(location)"
+        let path = "https://earlybirdsearch.herokuapp.com/?business=\(business)&location=\(location)"
     
         Alamofire.request(path).responseJSON { response in
             
@@ -61,7 +61,12 @@ class SearchViewController: UIViewController {
     
     @IBAction func searchButtonPressed(_ sender: Any) {
         if searchTextField.text != "" && locationTextField.text != "" {
-            getResults(business: searchTextField.text!, location: locationTextField.text!)
+            let search = searchTextField.text!
+            let location = locationTextField.text!
+            
+            let trimmedSearch = search.replacingOccurrences(of: " ", with: "")
+            
+            getResults(business: trimmedSearch, location: location)
         }
     }
     
