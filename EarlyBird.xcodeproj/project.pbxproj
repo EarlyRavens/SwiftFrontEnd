@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20E464D8E9B2AB96CC9138F1 /* Pods_EarlyBird.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29CD348A489DB68884187C1 /* Pods_EarlyBird.framework */; };
 		7032EF331EEE6873008B8707 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7032EF321EEE6873008B8707 /* AppDelegate.swift */; };
 		7032EF351EEE6873008B8707 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7032EF341EEE6873008B8707 /* SearchViewController.swift */; };
 		7032EF381EEE6873008B8707 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7032EF361EEE6873008B8707 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A6F61B9DD18E75BF00ADBB0 /* Pods-EarlyBird.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarlyBird.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EarlyBird/Pods-EarlyBird.debug.xcconfig"; sourceTree = "<group>"; };
+		225FAA03AE504F2B9CE474F7 /* Pods-EarlyBird.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarlyBird.release.xcconfig"; path = "Pods/Target Support Files/Pods-EarlyBird/Pods-EarlyBird.release.xcconfig"; sourceTree = "<group>"; };
 		7032EF2F1EEE6873008B8707 /* EarlyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarlyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7032EF321EEE6873008B8707 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7032EF341EEE6873008B8707 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		70BD4C9B1EEF04A500A2AF44 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		70BD4C9D1EEF0A1F00A2AF44 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		70BD4C9F1EEF0C4D00A2AF44 /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		C29CD348A489DB68884187C1 /* Pods_EarlyBird.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarlyBird.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E464D8E9B2AB96CC9138F1 /* Pods_EarlyBird.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0846CC0A8CF6761D1168BD78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A6F61B9DD18E75BF00ADBB0 /* Pods-EarlyBird.debug.xcconfig */,
+				225FAA03AE504F2B9CE474F7 /* Pods-EarlyBird.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7032EF261EEE6873008B8707 = {
 			isa = PBXGroup;
 			children = (
 				7032EF311EEE6873008B8707 /* EarlyBird */,
 				7032EF301EEE6873008B8707 /* Products */,
+				0846CC0A8CF6761D1168BD78 /* Pods */,
+				9C72743E5DBCE3EF7DCD765A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +113,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		9C72743E5DBCE3EF7DCD765A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C29CD348A489DB68884187C1 /* Pods_EarlyBird.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7032EF411EEE6873008B8707 /* Build configuration list for PBXNativeTarget "EarlyBird" */;
 			buildPhases = (
+				6E2CD2986F0D47B8E85D134A /* [CP] Check Pods Manifest.lock */,
 				7032EF2B1EEE6873008B8707 /* Sources */,
 				7032EF2C1EEE6873008B8707 /* Frameworks */,
 				7032EF2D1EEE6873008B8707 /* Resources */,
+				BE963C77481D2DF4C3C759C4 /* [CP] Embed Pods Frameworks */,
+				96B602B5DC1223BDD977AA3B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,6 +191,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E2CD2986F0D47B8E85D134A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		96B602B5DC1223BDD977AA3B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EarlyBird/Pods-EarlyBird-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE963C77481D2DF4C3C759C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EarlyBird/Pods-EarlyBird-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7032EF2B1EEE6873008B8707 /* Sources */ = {
@@ -295,7 +370,9 @@
 		};
 		7032EF421EEE6873008B8707 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A6F61B9DD18E75BF00ADBB0 /* Pods-EarlyBird.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WRD8ABT3AF;
 				INFOPLIST_FILE = EarlyBird/Info.plist;
@@ -308,7 +385,9 @@
 		};
 		7032EF431EEE6873008B8707 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 225FAA03AE504F2B9CE474F7 /* Pods-EarlyBird.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WRD8ABT3AF;
 				INFOPLIST_FILE = EarlyBird/Info.plist;
