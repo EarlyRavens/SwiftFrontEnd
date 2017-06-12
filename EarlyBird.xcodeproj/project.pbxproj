@@ -16,6 +16,10 @@
 		70BD4C9C1EEF04A500A2AF44 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD4C9B1EEF04A500A2AF44 /* ResultsViewController.swift */; };
 		70BD4C9E1EEF0A1F00A2AF44 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD4C9D1EEF0A1F00A2AF44 /* Result.swift */; };
 		70BD4CA01EEF0C4D00A2AF44 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD4C9F1EEF0C4D00A2AF44 /* ResultCell.swift */; };
+		70EC68F11EEF450F008B56DA /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC68F01EEF450F008B56DA /* MaterialTextField.swift */; };
+		70EC68F31EEF456F008B56DA /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC68F21EEF456F008B56DA /* MaterialButton.swift */; };
+		70EC68F61EEF45BF008B56DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC68F51EEF45BF008B56DA /* Constants.swift */; };
+		70EC68F81EEF474D008B56DA /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC68F71EEF474D008B56DA /* MaterialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		70BD4C9B1EEF04A500A2AF44 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		70BD4C9D1EEF0A1F00A2AF44 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		70BD4C9F1EEF0C4D00A2AF44 /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		70EC68F01EEF450F008B56DA /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		70EC68F21EEF456F008B56DA /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		70EC68F51EEF45BF008B56DA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		70EC68F71EEF474D008B56DA /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		C29CD348A489DB68884187C1 /* Pods_EarlyBird.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarlyBird.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +84,7 @@
 		7032EF311EEE6873008B8707 /* EarlyBird */ = {
 			isa = PBXGroup;
 			children = (
+				70EC68F41EEF45AF008B56DA /* Utils */,
 				70BD4C981EEF045200A2AF44 /* Model */,
 				70BD4C991EEF045C00A2AF44 /* View */,
 				70BD4C9A1EEF046100A2AF44 /* Controller */,
@@ -100,6 +109,9 @@
 				7032EF3B1EEE6873008B8707 /* LaunchScreen.storyboard */,
 				7032EF361EEE6873008B8707 /* Main.storyboard */,
 				70BD4C9F1EEF0C4D00A2AF44 /* ResultCell.swift */,
+				70EC68F01EEF450F008B56DA /* MaterialTextField.swift */,
+				70EC68F21EEF456F008B56DA /* MaterialButton.swift */,
+				70EC68F71EEF474D008B56DA /* MaterialView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -111,6 +123,14 @@
 				70BD4C9B1EEF04A500A2AF44 /* ResultsViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		70EC68F41EEF45AF008B56DA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				70EC68F51EEF45BF008B56DA /* Constants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		9C72743E5DBCE3EF7DCD765A /* Frameworks */ = {
@@ -245,11 +265,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EC68F11EEF450F008B56DA /* MaterialTextField.swift in Sources */,
+				70EC68F31EEF456F008B56DA /* MaterialButton.swift in Sources */,
 				7032EF351EEE6873008B8707 /* SearchViewController.swift in Sources */,
+				70EC68F81EEF474D008B56DA /* MaterialView.swift in Sources */,
 				7032EF331EEE6873008B8707 /* AppDelegate.swift in Sources */,
 				70BD4C9E1EEF0A1F00A2AF44 /* Result.swift in Sources */,
 				70BD4CA01EEF0C4D00A2AF44 /* ResultCell.swift in Sources */,
 				70BD4C9C1EEF04A500A2AF44 /* ResultsViewController.swift in Sources */,
+				70EC68F61EEF45BF008B56DA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

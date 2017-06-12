@@ -33,7 +33,7 @@ class SearchViewController: UIViewController {
     func getResults(business: String, location: String) {
         var nameForInit,urlForInit: String!
         
-        let path = "https://earlybirdsearch.herokuapp.com/?business=\(business)&location=\(location)"
+        let path = "\(BASE_URL)\(business)&location=\(location)"
     
         Alamofire.request(path).responseJSON { response in
             
@@ -53,7 +53,7 @@ class SearchViewController: UIViewController {
                         self.results.append(result)
                     }
                     
-                    self.performSegue(withIdentifier: "ShowResults", sender: self.results)
+                    self.performSegue(withIdentifier: SEGUE_SHOW_RESULTS, sender: self.results)
                 }
             }
         }
@@ -71,7 +71,7 @@ class SearchViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowResults" {
+        if segue.identifier == SEGUE_SHOW_RESULTS {
             if let resultsVC = segue.destination as? ResultsViewController {
                 if let results = sender as? [Result] {
                     resultsVC.results = results
