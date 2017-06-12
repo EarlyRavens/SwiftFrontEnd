@@ -23,10 +23,8 @@ class SearchViewController: UIViewController {
 
     @IBAction func searchButtonPressed(_ sender: Any) {
         if searchTextField.text != "" && locationTextField.text != "" {
-            let search = searchTextField.text!
-            let location = locationTextField.text!
-            
-            let results = [search, location]
+            let result = Result.init(name: "Sushi", url: "sushi.com")
+            let results = [result]
             
             performSegue(withIdentifier: "ShowResults", sender: results)
         }
@@ -35,7 +33,7 @@ class SearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowResults" {
             if let resultsVC = segue.destination as? ResultsViewController {
-                if let results = sender as? [String] {
+                if let results = sender as? [Result] {
                     resultsVC.results = results
                 }
             }

@@ -12,7 +12,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var resultsTableView: UITableView!
     
-    var results = [String]()
+    var results = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +32,15 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultsTableView.dequeueReusableCell(withIdentifier: "cell")
-        
-        cell?.textLabel?.text = results[indexPath.row]
-        
-        return cell!
+        if let cell = resultsTableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as? ResultCell {
+            
+            let result = results[indexPath.row]
+            cell.configureCell(result: result)
+            
+            return cell
+            
+        } else {
+            return ResultCell()
+        }
     }
 }
