@@ -18,7 +18,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "EarlyBird"
+        self.title = "EarlyBird"
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {
