@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchViewController: UIViewController {
 
@@ -15,31 +16,52 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var results = [Result]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "EarlyBird"
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        results.removeAll()
+    }
 
     func getResults(business: String, location: String) {
+        var nameForInit,urlForInit: String!
+        
         let path = "https://enigmatic-forest-54143.herokuapp.com/?business=\(business)&location=\(location)"
-        let url = URL(string: path)
-        let request = URLRequest(url: url!)
-        let session = URLSession.shared
-        _ = session.dataTask(with: request) { (data, response, error) -> Void in
-            print(data ?? "no data")
-            print(response ?? "no response")
+    
+        Alamofire.request(path).responseJSON { response in
+            
+            if let json = response.result.value as? [String: Any] {
+                if let data = json["data"] as? [Dictionary<String, Any>] {
+                    
+                    for i in 0..<data.count {
+                        if let name = data[i]["name"] as? String {
+                            nameForInit = name
+                        }
+                        
+                        if let url = data[i]["url"] as? String {
+                            urlForInit = url
+                        }
+                        
+                        let result = Result.init(name: nameForInit, url: urlForInit)
+                        self.results.append(result)
+                    }
+                    
+                    self.performSegue(withIdentifier: "ShowResults", sender: self.results)
+                }
+            }
         }
     }
     
     @IBAction func searchButtonPressed(_ sender: Any) {
         if searchTextField.text != "" && locationTextField.text != "" {
-            let result = Result.init(name: "Sushi", url: "94105")
-            let results = [result]
-            
-            getResults(business: result.resultName, location: result.resultUrl)
-            
-            performSegue(withIdentifier: "ShowResults", sender: results)
+            getResults(business: searchTextField.text!, location: locationTextField.text!)
         }
     }
     
