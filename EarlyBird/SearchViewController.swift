@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -17,9 +17,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        self.title = "EarlyBird"
+        title = "EarlyBird"
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -27,8 +26,19 @@ class ViewController: UIViewController {
             let search = searchTextField.text!
             let location = locationTextField.text!
             
-            print(search)
-            print(location)
+            let results = [search, location]
+            
+            performSegue(withIdentifier: "ShowResults", sender: results)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowResults" {
+            if let resultsVC = segue.destination as? ResultsViewController {
+                if let results = sender as? [String] {
+                    resultsVC.results = results
+                }
+            }
         }
     }
 }
