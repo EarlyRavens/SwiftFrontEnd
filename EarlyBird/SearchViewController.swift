@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -24,10 +24,13 @@ class SearchViewController: UIViewController {
         self.title = "EarlyBird"
         
         loadingIndicator.isHidden = true
+        
+        searchTextField.delegate = self
+        locationTextField.delegate = self
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
         results.removeAll()
         
@@ -89,4 +92,15 @@ class SearchViewController: UIViewController {
             }
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        locationTextField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }

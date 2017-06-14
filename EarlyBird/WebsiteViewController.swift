@@ -17,6 +17,8 @@ class WebsiteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Yelp Page"
+        
         webView = WKWebView(frame: view.frame)
         view.addSubview(webView)
         
