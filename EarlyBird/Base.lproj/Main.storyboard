@@ -139,30 +139,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vws-UW-UNu">
-                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="110" id="H8T-lP-GfG" customClass="ResultCell" customModule="EarlyBird" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="125" id="H8T-lP-GfG" customClass="ResultCell" customModule="EarlyBird" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H8T-lP-GfG" id="1bo-hy-i28">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15G-Su-kpI" customClass="MaterialView" customModule="EarlyBird" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="355" height="100"/>
+                                                    <rect key="frame" x="10" y="10" width="355" height="110"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-dr-0EH">
-                                                            <rect key="frame" x="10" y="10" width="335" height="80"/>
+                                                            <rect key="frame" x="10" y="10" width="335" height="90"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW8-WU-P7L">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="42.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="48"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Url" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="dt4-Gg-VCH">
-                                                                    <rect key="frame" x="0.0" y="42.5" width="335" height="37.5"/>
+                                                                    <rect key="frame" x="0.0" y="48" width="335" height="42"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -180,9 +180,9 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="15G-Su-kpI" firstAttribute="top" secondItem="1bo-hy-i28" secondAttribute="top" id="BD7-gm-2F7"/>
+                                                <constraint firstItem="15G-Su-kpI" firstAttribute="top" secondItem="1bo-hy-i28" secondAttribute="top" constant="10" id="BD7-gm-2F7"/>
                                                 <constraint firstItem="15G-Su-kpI" firstAttribute="leading" secondItem="1bo-hy-i28" secondAttribute="leading" constant="10" id="PmI-TI-0df"/>
-                                                <constraint firstAttribute="bottom" secondItem="15G-Su-kpI" secondAttribute="bottom" constant="10" id="XeG-84-gZs"/>
+                                                <constraint firstAttribute="bottom" secondItem="15G-Su-kpI" secondAttribute="bottom" constant="5" id="XeG-84-gZs"/>
                                                 <constraint firstAttribute="trailing" secondItem="15G-Su-kpI" secondAttribute="trailing" constant="10" id="acu-mX-vm0"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -198,7 +198,7 @@
                         <constraints>
                             <constraint firstItem="vws-UW-UNu" firstAttribute="leading" secondItem="gDL-ZQ-sih" secondAttribute="leading" id="HET-4R-tBn"/>
                             <constraint firstAttribute="trailing" secondItem="vws-UW-UNu" secondAttribute="trailing" id="QkB-jo-PTF"/>
-                            <constraint firstItem="vws-UW-UNu" firstAttribute="top" secondItem="jTH-gR-cs4" secondAttribute="bottom" constant="8" id="u8k-3K-y4j"/>
+                            <constraint firstItem="vws-UW-UNu" firstAttribute="top" secondItem="jTH-gR-cs4" secondAttribute="bottom" id="u8k-3K-y4j"/>
                             <constraint firstItem="ufQ-DQ-g3d" firstAttribute="top" secondItem="vws-UW-UNu" secondAttribute="bottom" id="x8O-jV-Dfm"/>
                         </constraints>
                     </view>
