@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-bird" translatesAutoresizingMaskIntoConstraints="NO" id="y9P-OV-eWQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="early-bird.png" translatesAutoresizingMaskIntoConstraints="NO" id="y9P-OV-eWQ">
                                 <rect key="frame" x="66" y="208" width="243" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="B3Y-Uf-IQK"/>
@@ -44,6 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch-bird" width="300" height="300"/>
+        <image name="early-bird.png" width="289" height="254"/>
     </resources>
 </document>
