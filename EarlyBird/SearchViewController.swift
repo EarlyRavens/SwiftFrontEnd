@@ -36,7 +36,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.viewDidDisappear(animated)
         
         results.removeAll()
-        
+        resetView()
+    }
+    
+    func resetView() {
         searchButton.isHidden = false
         loadingIndicator.isHidden = true
         loadingIndicator.stopAnimating()
@@ -65,7 +68,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                         self.results.append(result)
                     }
                     
-                    self.performSegue(withIdentifier: SEGUE_SHOW_RESULTS, sender: self.results)
+                    if self.results.isEmpty {
+                        self.resetView()
+                        SCLAlertView().showError("No results found", subTitle: "Enter another search and try again.")
+                    } else {
+                        self.performSegue(withIdentifier: SEGUE_SHOW_RESULTS, sender: self.results)
+                    }
                 }
             }
         }
