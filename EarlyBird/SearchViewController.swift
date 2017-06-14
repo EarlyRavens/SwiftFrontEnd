@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SCLAlertView
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
 
@@ -27,6 +28,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         searchTextField.delegate = self
         locationTextField.delegate = self
+        
+        SCLAlertView().showInfo("Welcome to Early Bird", subTitle: "Enter a search to see a list of potential clients")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -73,13 +76,19 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             let search = searchTextField.text!
             let location = locationTextField.text!
             
-            let trimmedSearch = search.replacingOccurrences(of: " ", with: "")
-            
-            getResults(business: trimmedSearch, location: location)
-            
-            searchButton.isHidden = true
-            loadingIndicator.isHidden = false
-            loadingIndicator.startAnimating()
+            if validateZipCode(zipCode: location) {
+                let trimmedSearch = search.replacingOccurrences(of: " ", with: "")
+                
+                getResults(business: trimmedSearch, location: location)
+                
+                searchButton.isHidden = true
+                loadingIndicator.isHidden = false
+                loadingIndicator.startAnimating()
+            } else {
+                SCLAlertView().showError("Invalid zip code", subTitle: "Enter a valid 5-digit zip code and try again")
+            }
+        } else {
+            SCLAlertView().showError("No blank inputs", subTitle: "Enter non-blank inputs and try again")
         }
     }
     
@@ -90,6 +99,23 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                     resultsVC.results = results
                 }
             }
+        }
+    }
+    
+    func validateZipCode(zipCode: String) -> Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "\\b\\d{5}\\b", options: [])
+            let testString = zipCode as NSString
+            let results = regex.numberOfMatches(in: zipCode, options: [], range: NSMakeRange(0, testString.length))
+            
+            if results == 0 {
+                return false
+            } else {
+                return true
+            }
+        } catch let error as NSError {
+            print("Invalid regex: \(error.localizedDescription)")
+            return false
         }
     }
     

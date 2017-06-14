@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'EarlyBird' do
     pod 'Alamofire', '~> 4.4'
+    pod 'SCLAlertView'
 end
