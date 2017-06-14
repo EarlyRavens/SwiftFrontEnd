@@ -18,3 +18,6 @@ let BASE_URL = "https://earlybirdsearch.herokuapp.com/?business="
 // Segues
 let SEGUE_SHOW_RESULTS = "ShowResults"
 let SEGUE_SHOW_WEBSITE = "ShowWebsite"
+
+// Cell Identifier
+let CELL_ID_RESULT = "ResultCell"

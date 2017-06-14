@@ -18,7 +18,11 @@ class Result: NSObject {
     }
     
     var resultUrl: String {
-        return _resultUrl
+        if _resultUrl.contains("?") {
+            return _resultUrl.substring(to: _resultUrl.characters.index(of: "?")!)
+        } else {
+            return _resultUrl
+        }
     }
     
     init(name: String, url: String) {
