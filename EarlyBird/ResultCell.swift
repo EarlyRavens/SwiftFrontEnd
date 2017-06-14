@@ -23,11 +23,6 @@ class ResultCell: UITableViewCell {
     
     func configureCell(result: Result) {
         nameLabel.text = result.resultName
-        
-        if result.resultUrl.contains("?") {
-            urlLabel.text = result.resultUrl.substring(to: result.resultUrl.characters.index(of: "?")!)
-        } else {
-            urlLabel.text = result.resultUrl
-        }
+        urlLabel.text = result.resultUrl
     }
 }
