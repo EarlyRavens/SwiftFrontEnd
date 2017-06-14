@@ -32,7 +32,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = resultsTableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as? ResultCell {
+        if let cell = resultsTableView.dequeueReusableCell(withIdentifier: CELL_ID_RESULT, for: indexPath) as? ResultCell {
             
             let result = results[indexPath.row]
             cell.configureCell(result: result)
