@@ -13,8 +13,8 @@ class SearchViewController: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
-    
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchButton: MaterialButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     var results = [Result]()
     
@@ -22,12 +22,18 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "EarlyBird"
+        
+        loadingIndicator.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         results.removeAll()
+        
+        searchButton.isHidden = false
+        loadingIndicator.isHidden = true
+        loadingIndicator.stopAnimating()
     }
 
     func getResults(business: String, location: String) {
@@ -67,6 +73,10 @@ class SearchViewController: UIViewController {
             let trimmedSearch = search.replacingOccurrences(of: " ", with: "")
             
             getResults(business: trimmedSearch, location: location)
+            
+            searchButton.isHidden = true
+            loadingIndicator.isHidden = false
+            loadingIndicator.startAnimating()
         }
     }
     
