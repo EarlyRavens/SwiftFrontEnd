@@ -22,8 +22,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "EarlyBird"
+        let titleImage = UIImage(named: "early-bird-title")
+        let titleImageView = UIImageView(image: titleImage)
+        titleImageView.contentMode = .scaleAspectFit
         
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        titleImageView.frame = titleView.bounds
+        titleView.addSubview(titleImageView)
+        
+        self.navigationItem.titleView = titleView
+
         loadingIndicator.isHidden = true
         
         searchTextField.delegate = self
